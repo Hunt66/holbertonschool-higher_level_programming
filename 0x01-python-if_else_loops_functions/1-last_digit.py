@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-# this program makes a random number and prints the last diget of (that
-# number) is (last digit) is greater than 5 less than 6 and not 0 or
-# is zero
 
 import random
 number = random.randint(-10000, 10000)
