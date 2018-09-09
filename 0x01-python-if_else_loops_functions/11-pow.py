@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def pow(a, b):
     d = 1
     if b < 0:
