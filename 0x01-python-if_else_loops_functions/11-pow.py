@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def pow(a, b):
     d = 1
+    if b == 0:
+        return d
     if b < 0:
         b = abs(b)
         for c in range(b):
