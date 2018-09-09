@@ -22,8 +22,5 @@ elif abs(number) % 10 < 6 and abs(number) % 10 != 0:
               .format(number, abs(number) % 10))
 else:
     if number >= 0:
-        print("Last digit of {:d} is {:d} and is zero" .format(number,
-                                                           number % 10))
-    else:
-        print("Last digit of {:d} is -{:d} and is zero" .format(number,
-                                                           abs(number) % 10))
+        print("Last digit of {:d} is {:d} and is zero"
+              .format(number, abs(number) % 10))
