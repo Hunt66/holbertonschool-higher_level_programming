@@ -7,7 +7,7 @@ if __name__ == "__main__":
     if count != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    elif args[1] != '+' and args[1] != '-' and args[1] != '/' and args[1] != '*':
+    if args[1] != '+' and args[1] != '-' and args[1] != '/' and args[1] != '*':
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
     else:
