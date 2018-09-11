@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+import dis
+import hidden_4
+print(dir(hidden_4))
+#dis.dis(hidden_4)
