@@ -13,10 +13,10 @@ int is_palindrome(listint_t **head)
 	listint_t *back = *head;
 	listint_t *begin = *head;
 
-	for (i = 0; back != NULL; i++)
+	for (i = 0; back->next != NULL; i++)
 		back = back->next;
-	len = i - 1;
-	for (; len / 2 >= 0; len--)
+	len = i;
+	for (; len / 2 > 0; len--)
 	{
 		back = *head;
 		for (i = 0; i < len; i++)
