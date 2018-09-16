@@ -9,14 +9,15 @@
 
 int is_palindrome(listint_t **head)
 {
-	int i, len;
+	int i, j, len;
 	listint_t *back = *head;
 	listint_t *begin = *head;
 
 	for (i = 0; back->next != NULL; i++)
 		back = back->next;
 	len = i;
-	for (; len / 2 > 0; len--)
+	j = len;
+	for (; len > j / 2 ; len--)
 	{
 		back = *head;
 		for (i = 0; i < len; i++)
