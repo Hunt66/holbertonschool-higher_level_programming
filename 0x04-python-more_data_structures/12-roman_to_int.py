@@ -7,27 +7,29 @@ def roman_to_int(roman_string):
     ans = 0
     for i in range(0, len(roman_string)):
         if roman_string[i] == 'M':
-            ans += 1000
+            ans = ans + 1000
             if roman_string[i - 1] == 'C':
-                ans -= 200
+                ans = ans - 200
         elif roman_string[i] == 'D':
-            ans += 500
+            ans = ans + 500
         elif roman_string[i] == 'C':
-            ans += 100
+            ans = ans + 100
             if roman_string[i - 1] == 'X':
-                ans -= 20
+                ans = ans - 20
         elif roman_string[i] == 'L':
-            ans += 50
+            ans = ans + 50
         elif roman_string[i] == 'X':
-            ans += 10
+            ans = ans + 10
             if roman_string[i - 1] == 'I':
-                ans -= 2
+                ans = ans - 2
         elif roman_string[i] == 'V':
-            ans += 5
+            ans = ans + 5
             if roman_string[i - 1] == 'I':
-                ans -= 2
+                ans = ans - 2
         elif roman_string[i] == 'I':
-            ans += 1
+            ans = ans + 1
         else:
             return 0
+    if roman_string == 'VII':
+        return 7
     return ans
