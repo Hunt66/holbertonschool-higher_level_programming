@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+def roman_to_int(roman_string):
+    if not isinstance(roman_string, str) or roman_string is None:
+        return 0
+    ans = 0
+    for i in range(0, len(roman_string)):
+        if roman_string[i] == 'M':
+            ans += 1000
+            if roman_string[i - 1] == 'C':
+                ans -= 200
+        elif roman_string[i] == 'D':
+            ans += 500
+        elif roman_string[i] == 'C':
+            ans += 100
+            if roman_string[i - 1] == 'X':
+                ans -= 20
+        elif roman_string[i] == 'L':
+            ans += 50
+        elif roman_string[i] == 'X':
+            ans += 10
+            if roman_string[i - 1] == 'I':
+                ans -= 2
+        elif roman_string[i] == 'V':
+            ans += 5
+        elif roman_string[i] == 'I':
+            ans += 1
+    return ans
