@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not isinstance(roman_string, str) or roman_string is None:
+    if roman_string is None or type(roman_string) != str:
         return 0
     ans = 0
     for i in range(0, len(roman_string)):
@@ -26,4 +26,6 @@ def roman_to_int(roman_string):
                 ans -= 2
         elif roman_string[i] == 'I':
             ans += 1
+        else:
+            return 0
     return ans
