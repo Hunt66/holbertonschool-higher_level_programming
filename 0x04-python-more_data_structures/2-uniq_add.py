@@ -7,5 +7,5 @@ def uniq_add(my_list=[]):
             if (my_list[i] == my_list[j]) and (i != j):
                 flag = 1
         if flag == 0:
-            ans +=  my_list[i]
+            ans += my_list[i]
     return ans

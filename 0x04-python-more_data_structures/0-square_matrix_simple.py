@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    if matrix[0] is None:
-        return None:
     m = [[None] * len(matrix[0])] * len(matrix)
     for i in range(0, len(matrix)):
         for j in range(0, len(matrix[i])):
