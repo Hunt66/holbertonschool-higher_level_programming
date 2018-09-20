@@ -22,6 +22,8 @@ def roman_to_int(roman_string):
                 ans -= 2
         elif roman_string[i] == 'V':
             ans += 5
+            if roman_string[i - 1] == 'I':
+                ans -= 2
         elif roman_string[i] == 'I':
             ans += 1
     return ans
