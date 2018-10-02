@@ -54,15 +54,3 @@ class Square:
             print('')
         if self.size == 0:
             print('')
-    def __str__(self):
-        squ = ""
-        for i in range(0, self.position[1]):
-            squ = squ + '\n'
-        for i in range(0, self.size):
-            for j in range(0, self.position[0]):
-                squ = squ + ' '
-            for j in range(0, self.size):
-                squ = squ + '#'
-            if i is not (self.size - 1):
-                squ = squ + '\n'
-        return squ
