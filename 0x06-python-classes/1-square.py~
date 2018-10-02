@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+class Square:
+    __size = None
+
+    def __init__(self, new_size=None):
+        self.is_new = True
+        if new_size is not None:
+            self.size = new_size
