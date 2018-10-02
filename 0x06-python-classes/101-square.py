@@ -52,11 +52,13 @@ class Square:
             raise TypeError("size myst be an integer")
         return (self.size * self.size)
 
-    def my_print(self):                        # print square
+    def my_print(self):           # print square
+        for i in range(0, self.position[1]):
+            print('')
         for i in range(0, self.size):
-            for i in range(0, self.position[0]):
+            for j in range(0, self.position[0]):
                 print(' ', end='')
-            for i in range(0, self.size):
+            for j in range(0, self.size):
                 print('#', end='')
             print('')
         if self.size == 0:
