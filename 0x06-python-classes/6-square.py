@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 class Square:
-    __size = 0
-    position = (0, 0)
 
     def __init__(self, new_size=0, new_position=(0, 0)):   # initialization
         if not isinstance(new_position, tuple):
@@ -11,15 +9,20 @@ class Square:
         elif not isinstance(new_position[1], int) or new_position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif not isinstance(new_size, int):
-            self.size = 0
+            self.__size = 0
             raise TypeError("size myst be an integer")
         elif new_size < 0:
-            self.size = 0
+            self.__size = 0
             raise ValueError("size must be >= 0")
         else:
-            self.size = new_size
+            self.__size = new_size
             self.position = new_position
 
+    @property
+    def position(self):                    # position retriever
+        return self.__position
+
+    @position.setter
     def position(self, value):            # position setter
         if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -28,38 +31,37 @@ class Square:
         elif not isinstance(value[1], int) or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.position = value
+            self.__position = value
 
-    def position(self):                    # position retriever
-        return self.position
+    @property
+    def size(self):                       # size getter
+        return self.__size
 
+    @size.setter
     def size(self, value):                 # size setter
         if not isinstance(value, int):
-            self.size = 0
+            self.__size = 0
             raise TypeError("size myst be an integer")
             exit
         elif value < 0:
-            self.size = 0
+            self.__size = 0
             raise ValueError("size must be >= 0")
         else:
-            self.size = value
-
-    def size(self):                       # size getter
-        return self.size
+            self.__size = value
 
     def area(self):
-        if not isinstance(self.size, int):
+        if not isinstance(self.__size, int):
             raise TypeError("size myst be an integer")
-        return (self.size * self.size)
+        return (self.size * self.__size)
 
     def my_print(self):              # print square
-        for i in range(0, self.position[1]):
+        for i in range(0, self.__position[1]):
             print('')
-        for i in range(0, self.size):
-            for j in range(0, self.position[0]):
+        for i in range(0, self.__size):
+            for j in range(0, self.__position[0]):
                 print(' ', end='')
-            for j in range(0, self.size):
+            for j in range(0, self.__size):
                 print('#', end='')
             print('')
-        if self.size == 0:
+        if self.__size == 0:
             print('')
