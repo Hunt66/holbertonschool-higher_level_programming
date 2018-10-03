@@ -4,11 +4,11 @@ class Square:
     area = 0
 
     def __init__(self, new_size=0):
-        if not isinstance(value, int):
+        if not isinstance(new_size, int):
             self.size = 0
             raise TypeError("size must be an integer")
             exit
-        elif value < 0:
+        elif new_size < 0:
             self.size = 0
             raise ValueError("size must be >= 0")
         else:
