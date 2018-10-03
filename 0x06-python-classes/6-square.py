@@ -16,7 +16,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = new_size
-            self.position = new_position
+            self.__position = new_position
 
     @property
     def position(self):                    # position retriever
@@ -50,9 +50,7 @@ class Square:
             self.__size = value
 
     def area(self):
-        if not isinstance(self.__size, int):
-            raise TypeError("size myst be an integer")
-        return (self.size * self.__size)
+        return (self.__size * self.__size)
 
     def my_print(self):              # print square
         for i in range(0, self.__position[1]):
