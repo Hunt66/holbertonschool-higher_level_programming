@@ -77,6 +77,4 @@ class Square:
                 squ = squ + '#'
             if i is not (self.__size - 1):
                 squ = squ + '\n'
-        if self.__size == 0:
-            squ = squ + '\n'
         return squ
