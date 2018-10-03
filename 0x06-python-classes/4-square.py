@@ -4,7 +4,15 @@ class Square:
     area = 0
 
     def __init__(self, new_size=0):
-        self.size = new_size
+        if not isinstance(value, int):
+            self.size = 0
+            raise TypeError("size must be an integer")
+            exit
+        elif value < 0:
+            self.size = 0
+            raise ValueError("size must be >= 0")
+        else:
+            self.size = new_size
 
     def size(self):
         return self.size
