@@ -5,7 +5,7 @@ Using ``matrix_divided``
 -------------------
 
 This is an example text file in reStructuredText format.  First import
-``matrix_divided`` from the ``matrix_divided`` module:
+``matrix_divided`` from the ``2-matrix_divided`` module:
 
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 

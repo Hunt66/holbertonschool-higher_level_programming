@@ -27,15 +27,8 @@ def matrix_mul(m_a, m_b):
             raise TypeError("each row of m_a must should be of the same size")
         out1 = []
         for j in range(0, len(m_b[i])):
-            if not isinstance(m_b[i][j], int) and
-            not isinstance(m_b[i][j], float):
-                raise ValueError("m_b should contain only integers or floats")
             crnt = 0
             for k in range(0, len(m_a[i])):
-                if not isinstance(m_a[i][k], int) and
-                not isinstance(m_a[i][k], float):
-                    raise ValueError("m_a should contain only integers "
-                                     "or floats")
                 crnt += m_a[i][k] * m_b[k][j]
             out1.append(crnt)
         out.append(out1)
