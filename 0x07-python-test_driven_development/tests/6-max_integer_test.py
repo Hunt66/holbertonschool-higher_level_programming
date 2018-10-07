@@ -17,5 +17,3 @@ class TestMaxInteger(unittest.TestCase):
         self.assertAlmostEqual(max_integer(['a', 'b', 'z']), 'z')
 
 
-if __name__ == __main__:
-    unittest.main()
