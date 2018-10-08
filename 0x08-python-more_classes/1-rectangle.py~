@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+"""THis is a rectangle class"""
+class Rectangle:
+    """rectangle"""
+    @property
+    def width(self):
+        return self.width
+
+    @width.setter
+    def width(self, value):
+        if not isinstance(
