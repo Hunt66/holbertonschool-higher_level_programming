@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""matrix mul
+"""
 def matrix_mul(m_a, m_b):
+    """error checks
+    """
     if m_a is None:
         raise TypeError("m_a must be a list")
     if m_b is None:
@@ -43,6 +47,8 @@ def matrix_mul(m_a, m_b):
     if (len(m_a) > len(m_b)):
         raise ValueError("m_a and m_b can't be multiplied")
 
+    """real work
+    """
     for i in range(0, len(m_a)):
         out1 = []
         for j in range(0, len(m_b[i])):
