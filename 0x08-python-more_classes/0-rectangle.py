@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""THis is a rectangle class"""
+"""THis is a rectangle class
+"""
 class Rectangle:
-    """rectangle"""
+    """rectangle
+    """
     pass
