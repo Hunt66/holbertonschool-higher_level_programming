@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""THis is a rectangle class"""
 class Rectangle:
-    """rectangle"""
 
     @property
     def width(self):

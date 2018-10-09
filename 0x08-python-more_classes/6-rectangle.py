@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""THis is a rectangle class
-"""
 class Rectangle:
-    """rectangle
-    """
     number_of_instances = 0
 
     @property
