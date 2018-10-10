@@ -14,10 +14,10 @@ try:
 except Exception as e:
     print(e)
 try:
-    print (add_integer("school", "holberton"))
+    print (add_integer(float('inf'), 4))
 except Exception as e:
     print(e)
 try:
-    print(add_integer(1, 12h3))
+           print(add_integer(float('nan'), 3))
 except Exception as e:
     print(e)

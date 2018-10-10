@@ -11,6 +11,16 @@ This is an example text file in reStructuredText format.  First import
 
 Now use it:
 
+    >>> try:
+    ...     print(add_integer(float('inf'), 3))
+    ... except Exception as e:
+    ...     print(e)
+    cannot convert float infinity to integer
+    >>> try:
+    ...     print(add_integer(float('nan'), 3))
+    ... except Exception as e:
+    ...     print(e)
+    cannot convert float NaN to integer
     >>> print(add_integer(1, 2))
     3
     >>> print(add_integer(100, -2))
