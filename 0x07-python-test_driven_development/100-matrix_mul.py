@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """matrix mul
 """
+
+
 def matrix_mul(m_a, m_b):
     """error checks
     """
@@ -30,13 +32,13 @@ def matrix_mul(m_a, m_b):
     crnt = 0
     for i in range(0, len(m_b)):
         for j in range(0, len(m_b[i])):
-            if (not isinstance(m_b[i][j], int)
-            and not isinstance(m_b[i][j], float)):
+            if (not isinstance(m_b[i][j], int) and
+            not isinstance(m_b[i][j], float)):
                 raise TypeError("m_b should contain only integers or floats")
     for i in range(0, len(m_a)):
         for j in range(0, len(m_a[i])):
-            if (not isinstance(m_a[i][j], int)
-            and not isinstance(m_a[i][j], float)):
+            if (not isinstance(m_a[i][j], int) and
+            not isinstance(m_a[i][j], float)):
                 raise TypeError("m_a should contain only integers or floats")
     for i in range(0, len(m_b)):
         if len(m_b[0]) != len(m_b[i]):

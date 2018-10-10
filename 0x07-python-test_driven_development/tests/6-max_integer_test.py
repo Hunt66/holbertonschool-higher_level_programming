@@ -13,7 +13,6 @@ class TestMaxInteger(unittest.TestCase):
         self.assertAlmostEqual(max_integer([1, 6, 8, 3]), 8)
         self.assertAlmostEqual(max_integer([]), None)
         self.assertAlmostEqual(max_integer(), None)
-        self.assertAlmostEqual(max_integer("abcdefghiaaaaa"), 'i')
+
         self.assertAlmostEqual(max_integer(['a', 'b', 'z']), 'z')
         self.assertAlmostEqual(max_integer([1]), 1)
-
