@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+def add_attribute(clas, att, val):
+    try:
+        clas()
+        clas.att = val
+    except:
+        raise TypeError("can't add new attribute")
