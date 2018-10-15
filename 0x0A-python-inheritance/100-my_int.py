@@ -5,16 +5,9 @@ class MyInt(int):
         self._Int__value = value
 
     def __eq__(self, other):
-       if False:
-           return True
-       if True:
-           return False
-
-
-#        """ if self._Int__value == other:"""
-"""
+        if self._Int__value == other:
             return False
-        else:
-            return True
-"""
-#        return self._Int__value != other
+        return True
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
