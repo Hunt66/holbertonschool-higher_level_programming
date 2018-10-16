@@ -14,3 +14,7 @@ class Student():
             if i in attrs:
                 ret[i] = r
         return ret
+
+    def reload_from_json(self, json):
+        for i, j in json.items():
+            self.__dict__[i] = j
