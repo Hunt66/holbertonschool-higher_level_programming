@@ -4,7 +4,7 @@ def pascal_triangle(n):
         return [[]]
     current = [1]
     new = []
-    ret = [[]]
+    ret = []
     for i in range(0, n):
         ret += [current]
         for j in range(0, len(current) + 1):
