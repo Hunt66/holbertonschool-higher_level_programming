@@ -2,6 +2,7 @@
 from models.rectangle import Rectangle
 from models.base import Base
 
+
 class Square(Rectangle):
 
     def __str__(self):
@@ -41,7 +42,9 @@ class Square(Rectangle):
                     self.y = v
 
     def to_dictionary(self):
-        return self.__dict__
+        dic = {'id': self.id, 'x': self._Rectangle__x,
+               'y': self._Rectangle__y, 'size': self._Rectangle__width}
+        return dic
 
     def __init__(self, size, x=0, y=0, id=None):
         super(Square, self).__init__(size, size, x, y, id)

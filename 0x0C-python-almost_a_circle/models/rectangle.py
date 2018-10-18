@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from models.base import Base
 
+
 class Rectangle(Base):
 
     @property
@@ -97,9 +98,10 @@ class Rectangle(Base):
                 if k == "y":
                     self.y = v
 
-
     def to_dictionary(self):
-        return self.__dict__
+        dic = {'x': self.__x, 'y': self.__y, 'id': self.id,
+               'width': self.__width, 'height': self.__height}
+        return dic
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super(Rectangle, self).__init__(id)
