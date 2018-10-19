@@ -9,12 +9,9 @@ class Base():
         filename = str(cls.__name__) + ".json"
         with open(filename, 'r+', encoding='utf-8') as f:
             ret = []
-            dics = Base.from_json_string(f.read())
-            for i in range(len(dics)):
-                new = cls.create()
-                new.update(**dics[i])
-                ret += [new]
-            return ret
+            for 
+            print("test", type(dic), dic)
+            ret += Base.create(**dic)
 
     @classmethod
     def save_to_file(cls, list_objs):
