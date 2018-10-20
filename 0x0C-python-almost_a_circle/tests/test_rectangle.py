@@ -86,7 +86,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rec1.y, 0)
         self.assertEqual(self.rec2.y, 0)
 
-class TestError(unittest.TestCase):
+class TestErrorRec(unittest.TestCase):
 
     def test_width_Type_error(self):
         self.assertRaises(TypeError, Rectangle, "1", 1, 1, 1, 1)
