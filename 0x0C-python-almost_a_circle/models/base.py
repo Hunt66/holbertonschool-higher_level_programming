@@ -1,8 +1,65 @@
 #!/usr/bin/python3
 import json
+import turtle
+"""base class for shapes"""
+
 
 class Base():
     __nb_objects = 0
+
+    def draw(list_rectangles, list_squares):
+        for i in list_rectangles:
+            tur = turtle.Turtle()
+            tur.color("red")
+            tur.pensize(6)
+            tur.shape('turtle')
+            tur.forward(i.__width * 100)
+            tur.left(90)
+            tur.forward(i.__height * 100)
+            tur.left(90)
+            tur.forward(i.__width * 100)
+            tur.left(90)
+            tur.forward(i.__height * 100)
+        for i in list_squares:
+            tur = turtle.Turtle()
+            tur.color("blue")
+            tur.pensize(6)
+            tur.shape('turtle')
+            tur.forward(i.__width * 100)
+            tur.left(90)
+            tur.forward(i.__height * 100)
+            tur.left(90)
+            tur.forward(i.__width * 100)
+            tur.left(90)
+            tur.forward(i.__height * 100)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + '.csv'
+        with open(filename, 'w+') as f:
+            f.seek(0)
+            lst = []
+            for i in list_objs:
+                st = ''
+                st += str(i.id) + ', '
+                if cls.__name__ == "Rectangle":
+                    st += str(i.__width) + ', ' + str(i.__height) + ', '
+                else:
+                    st += str(i.__width) + ', '
+                st += str(i.__x) + ', ' + str(i.__y)
+                lst += st
+            f.write(lst)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + '.csv'
+        with open(filename, 'r+') as f:
+            lst = json.load(f.read())
+            ret = []
+            new = cls(1, 1)
+            for i in lst:
+                ret += [new.update(i)]
+            return ret
 
     @classmethod
     def load_from_file(cls):
