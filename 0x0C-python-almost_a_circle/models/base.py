@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+""" base class for all shapes"""
+
+
 import json
 import turtle
-"""base class for shapes"""
 
 
 class Base():
