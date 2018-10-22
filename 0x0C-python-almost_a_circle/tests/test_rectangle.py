@@ -66,15 +66,15 @@ class TestRectangle(unittest.TestCase):
 
     def test_id(self):
         """ tests id"""
-        self.assertEqual(self.rec0.id, 7)
-        self.assertEqual(self.rec1.id, 8)
+        self.assertEqual(self.rec0.id, 21)
+        self.assertEqual(self.rec1.id, 22)
         self.assertEqual(self.rec2.id, 13)
         self.assertEqual(self.rec3.id, 5)
 
     def test_str(self):
         """ tests the __str__ """
-        self.assertEqual(str(self.rec0), "[Rectangle] (9) 0/0 - 5/4")
-        self.assertEqual(str(self.rec1), "[Rectangle] (10) 0/0 - 2/1")
+        self.assertEqual(str(self.rec0), "[Rectangle] (23) 0/0 - 5/4")
+        self.assertEqual(str(self.rec1), "[Rectangle] (24) 0/0 - 2/1")
         self.assertEqual(str(self.rec2), "[Rectangle] (13) 0/0 - 3/6")
         self.assertEqual(str(self.rec3), "[Rectangle] (5) 5/6 - 1/2")
 

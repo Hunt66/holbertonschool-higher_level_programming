@@ -66,15 +66,15 @@ class TestSquare(unittest.TestCase):
 
     def test_id(self):
         """ tests id"""
-        self.assertEqual(self.rec0.id, 5)
-        self.assertEqual(self.rec1.id, 6)
+        self.assertEqual(self.rec0.id, 39)
+        self.assertEqual(self.rec1.id, 40)
         self.assertEqual(self.rec2.id, 13)
         self.assertEqual(self.rec3.id, 5)
 
     def test_str(self):
         """ tests __str__"""
-        self.assertEqual(str(self.rec0), "[Square] (9) 0/0 - 5")
-        self.assertEqual(str(self.rec1), "[Square] (10) 0/0 - 2")
+        self.assertEqual(str(self.rec0), "[Square] (43) 0/0 - 5")
+        self.assertEqual(str(self.rec1), "[Square] (44) 0/0 - 2")
         self.assertEqual(str(self.rec2), "[Square] (13) 0/0 - 6")
         self.assertEqual(str(self.rec3), "[Square] (5) 5/6 - 2")
 
