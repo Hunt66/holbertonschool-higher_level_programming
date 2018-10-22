@@ -3,7 +3,25 @@
 """
 
 import unittest
+import sys
+import io
+from contextlib import contextmanager
 from models.square import Square
+from models.base import Base
+
+@contextmanager
+def cap_out():
+    nout = io.StringIO()
+    nerr =  io.StringIO()
+    oout = sys.stdout
+    oerr = sys.stderr
+    try:
+        sys.stdout = nout
+        sys.stderr = nerr
+        yield sys.stdout, sys.stderr
+    finally:
+        sys.stdout = oout
+        sys.stderr = oerr
 
 class TestSquare(unittest.TestCase):
 
@@ -17,6 +35,20 @@ class TestSquare(unittest.TestCase):
         self.rec6 = Square(2, 2, 2, 128)
         self.rec7 = Square(3, 3, 3, 256)
 
+    def test_display(self):
+        with cap_out() as (out, err):
+            self.rec0.display()
+            buf = out.getvalue()
+            self.assertEqual(buf, '#####\n' * 5)
+        with cap_out() as (out, err):
+            self.rec1.display()
+            buf = out.getvalue()
+            self.assertEqual(buf, '##\n' * 2)
+        with cap_out() as (out, err):
+            self.rec3.display()
+            buf = out.getvalue()
+            self.assertEqual(buf, ('\n' * 6) + ('     ##\n' * 2))
+
     def test_to_dictionary(self):
         self.assertEqual(self.rec5.to_dictionary(),
                          {'x': 1, 'y': 1, 'size': 1, 'id': 64})
@@ -26,14 +58,14 @@ class TestSquare(unittest.TestCase):
                          {'x': 3, 'y': 3, 'size': 3, 'id': 256})
 
     def test_id(self):
-        self.assertEqual(self.rec0.id, 3)
-        self.assertEqual(self.rec1.id, 4)
+        self.assertEqual(self.rec0.id, 5)
+        self.assertEqual(self.rec1.id, 6)
         self.assertEqual(self.rec2.id, 13)
         self.assertEqual(self.rec3.id, 5)
 
     def test_str(self):
-        self.assertEqual(str(self.rec0), "[Square] (7) 0/0 - 5")
-        self.assertEqual(str(self.rec1), "[Square] (8) 0/0 - 2")
+        self.assertEqual(str(self.rec0), "[Square] (9) 0/0 - 5")
+        self.assertEqual(str(self.rec1), "[Square] (10) 0/0 - 2")
         self.assertEqual(str(self.rec2), "[Square] (13) 0/0 - 6")
         self.assertEqual(str(self.rec3), "[Square] (5) 5/6 - 2")
 

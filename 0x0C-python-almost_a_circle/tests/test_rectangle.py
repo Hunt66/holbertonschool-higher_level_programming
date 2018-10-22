@@ -3,7 +3,26 @@
 """
 
 import unittest
+import sys
+import io
+from contextlib import contextmanager
 from models.rectangle import Rectangle
+from models.base import Base
+
+
+@contextmanager
+def cap_out():
+    nout = io.StringIO()
+    nerr =  io.StringIO()
+    oout = sys.stdout
+    oerr = sys.stderr
+    try:
+        sys.stdout = nout
+        sys.stderr = nerr
+        yield sys.stdout, sys.stderr
+    finally:
+        sys.stdout = oout
+        sys.stderr = oerr
 
 class TestRectangle(unittest.TestCase):
 
@@ -17,6 +36,20 @@ class TestRectangle(unittest.TestCase):
         self.rec6 = Rectangle(2, 2, 2, 2, 128)
         self.rec7 = Rectangle(3, 3, 3, 3, 256)
 
+    def test_display(self):
+        with cap_out() as (out, err):
+            self.rec1.display()
+            buf = out.getvalue()
+            self.assertEqual(buf, '##\n')
+        with cap_out() as (out, err):
+            self.rec0.display()
+            buf = out.getvalue()
+            self.assertEqual(buf, '#####\n' * 4)
+        with cap_out() as (out, err):
+            self.rec3.display()
+            buf = out.getvalue()
+            self.assertEqual(buf, ('\n' * 6) + ('     #\n' * 2))
+
     def test_to_dictionary(self):
         self.assertEqual(self.rec5.to_dictionary(),
                          {'x': 1, 'y': 1, 'width': 1, 'height': 1, 'id': 64})
@@ -26,14 +59,14 @@ class TestRectangle(unittest.TestCase):
                          {'x': 3, 'y': 3, 'width': 3, 'height': 3, 'id': 256})
 
     def test_id(self):
-        self.assertEqual(self.rec0.id, 5)
-        self.assertEqual(self.rec1.id, 6)
+        self.assertEqual(self.rec0.id, 7)
+        self.assertEqual(self.rec1.id, 8)
         self.assertEqual(self.rec2.id, 13)
         self.assertEqual(self.rec3.id, 5)
 
     def test_str(self):
-        self.assertEqual(str(self.rec0), "[Rectangle] (7) 0/0 - 5/4")
-        self.assertEqual(str(self.rec1), "[Rectangle] (8) 0/0 - 2/1")
+        self.assertEqual(str(self.rec0), "[Rectangle] (9) 0/0 - 5/4")
+        self.assertEqual(str(self.rec1), "[Rectangle] (10) 0/0 - 2/1")
         self.assertEqual(str(self.rec2), "[Rectangle] (13) 0/0 - 3/6")
         self.assertEqual(str(self.rec3), "[Rectangle] (5) 5/6 - 1/2")
 
