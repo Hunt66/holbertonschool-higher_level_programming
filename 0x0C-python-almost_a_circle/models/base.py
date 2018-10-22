@@ -106,6 +106,7 @@ class Base():
         """ changes from json string to real"""
         return json.loads(json_string)
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ changes to json string"""
         if list_dictionaries is None:
