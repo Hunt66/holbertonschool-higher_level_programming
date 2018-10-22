@@ -89,11 +89,11 @@ class Base():
             f.seek(0)
             obj_list = []
             if len(list_objs) == 0:
-                f.write(json.dumps(obj_list))
+                f.write(Base.to_json_string(obj_list))
             else:
                 for obj in list_objs:
                     obj_list += [obj.to_dictionary()]
-                f.write(json.dumps(obj_list))
+                f.write(Base.to_json_string(obj_list))
 
     @classmethod
     def create(cls, **dictionary):
