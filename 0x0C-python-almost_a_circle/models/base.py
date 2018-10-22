@@ -102,6 +102,7 @@ class Base():
         new.update(**dictionary)
         return new
 
+    @staticmethod
     def from_json_string(json_string):
         """ changes from json string to real"""
         return json.loads(json_string)
