@@ -5,9 +5,12 @@ import turtle
 
 
 class Base():
+    """ BaseClass of all shapes"""
+
     __nb_objects = 0
 
     def draw(list_rectangles, list_squares):
+        """ draws shape with turtle"""
         for i in list_rectangles:
             tur = turtle.Turtle()
             tur.color("red")
@@ -35,6 +38,7 @@ class Base():
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """ saves data for shape to csv"""
         filename = cls.__name__ + '.csv'
         with open(filename, 'w+') as f:
             f.seek(0)
@@ -52,6 +56,7 @@ class Base():
 
     @classmethod
     def load_from_file_csv(cls):
+        """ loads data from csv """
         filename = cls.__name__ + '.csv'
         with open(filename, 'r+') as f:
             lst = json.load(f.read())
@@ -63,6 +68,7 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
+        """ loads from json file"""
         filename = str(cls.__name__) + ".json"
         with open(filename, 'r+', encoding='utf-8') as f:
             ret = []
@@ -75,6 +81,7 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ saves to json file"""
         filename = str(cls.__name__) + '.json'
         with open(filename, 'w+', encoding='utf-8') as f:
             f.seek(0)
@@ -88,19 +95,23 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
+        """ creates shape from dictionary"""
         new = cls(1, 1)
         new.update(**dictionary)
         return new
 
     def from_json_string(json_string):
+        """ changes from json string to real"""
         return json.loads(json_string)
 
     def to_json_string(list_dictionaries):
+        """ changes to json string"""
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
     def __init__(self, id=None):
+        """initialization"""
         if id is not None:
             self.id = id
         else:
