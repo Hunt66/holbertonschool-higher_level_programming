@@ -4,6 +4,7 @@
 
 import json
 import turtle
+import os
 
 
 class Base():
@@ -72,6 +73,8 @@ class Base():
     def load_from_file(cls):
         """ loads from json file"""
         filename = str(cls.__name__) + ".json"
+        if not os.path.isfile(filename):
+            return []
         with open(filename, 'r+', encoding='utf-8') as f:
             ret = []
             dics = Base.from_json_string(f.read())
