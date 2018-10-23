@@ -88,7 +88,7 @@ class Base():
         with open(filename, 'w+', encoding='utf-8') as f:
             f.seek(0)
             obj_list = []
-            if len(list_objs) == 0:
+            if list_objs is None or len(list_objs) == 0:
                 f.write(Base.to_json_string(obj_list))
             else:
                 for obj in list_objs:
