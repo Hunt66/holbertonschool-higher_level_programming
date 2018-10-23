@@ -105,6 +105,8 @@ class Base():
     @staticmethod
     def from_json_string(json_string):
         """ changes from json string to real"""
+        if json_string is None:
+            return []
         return json.loads(json_string)
 
     @staticmethod
