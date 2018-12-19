@@ -1,6 +1,6 @@
-##Python Import Modules
-#Holberton Coding School
-#by Erwin Gove
+## Python Import Modules
+# Holberton Coding School
+# by Erwin Gove
 9-13-2018
 
 This directory is made for education in python at holberton school.
