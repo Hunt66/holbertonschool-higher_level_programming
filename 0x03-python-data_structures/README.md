@@ -1,7 +1,7 @@
-##Python Data Structures
-#Holberton Coding School
-#Sep 18, 2018
-#Erwin Gove
+## Python Data Structures
+# Holberton Coding School
+# Sep 18, 2018
+# Erwin Gove
 This repository is made for education
 
 In this lession I will be using mostly python to learn about diffrent data
