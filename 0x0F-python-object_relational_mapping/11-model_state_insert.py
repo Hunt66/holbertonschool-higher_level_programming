@@ -21,7 +21,7 @@ def main(argv):
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    new = State(name='Lousiana')
+    new = State(name='Louisiana')
     session.add(new)
     session.commit()
     print(new.id)
