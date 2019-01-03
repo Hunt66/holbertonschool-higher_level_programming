@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Lists all state objects from the database """
+""" Counts instences of a certain state """
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -27,9 +27,9 @@ def main(argv):
     for state in session.query(State).order_by(State.id).all():
         if state.name == argv[4]:
             count += 1
-    if count > 0:
-        print(count)
-    else:
+            print(state.id)
+            break
+    if count == 0:
         print("Not found")
     session.close()
 
