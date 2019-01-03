@@ -23,7 +23,7 @@ def main(argv):
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    ans = session.query(state).first()
+    ans = session.query(State).first()
     if ans is None:
         print("Nothing")
     else:
