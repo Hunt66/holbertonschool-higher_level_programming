@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa"""
+""" lists all instences of sacific state """
 
 import MySQLdb
 import sys
