@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all instences of spacific state"""
+""" lists all instences of sacific state """
 
 import MySQLdb
 import sys
@@ -14,7 +14,7 @@ def main(argv):
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                          passwd=argv[2], db=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}'".format(argv[4]))
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id", (argv[4],))
 
     for row in cur.fetchall():
         print(row)
