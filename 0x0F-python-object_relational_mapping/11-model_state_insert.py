@@ -19,8 +19,6 @@ def main(argv):
                                                                        ),
                            pool_pre_ping=True)
 
-    Base.metadata.create_all(engine)
-
     Session = sessionmaker(bind=engine)
     session = Session()
     new = State(name='Lousiana')
