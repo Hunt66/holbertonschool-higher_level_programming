@@ -23,9 +23,12 @@ def main(argv):
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state in session.query(State).order_by(State.id)[0:1]:
-        print(state.id, end=': ')
-        print(state.name)
+    ans = session.query(state).first()
+    if ans is None:
+        print("Nothing")
+    else:
+        print(ans.id, end=': ')
+        print(ans.name)
     session.close()
 
 if __name__ == "__main__":
