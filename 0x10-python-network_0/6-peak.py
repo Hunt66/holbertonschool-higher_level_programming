@@ -3,7 +3,7 @@
 
 
 def find_peak(list_of_integers):
-    """ finds the highest int or none if no list """
+    """ finds the peak int or none if no list """
     if len(list_of_integers) == 0:
         return None
     else:
