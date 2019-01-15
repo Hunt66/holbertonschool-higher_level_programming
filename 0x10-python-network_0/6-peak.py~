@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+""" finds a peak in a list of unsorted ints """
+
+
+def find_peak(list_of_integers):
+    """ finds the highest int or none if no list """
+    list_len = len(list_of_integers)
+
+    if list_len == 0:
+        return None
+    else:
+        return max(list_of_integers)
