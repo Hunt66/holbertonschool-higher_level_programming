@@ -7,8 +7,4 @@ def find_peak(list_of_integers):
     if len(list_of_integers) == 0:
         return None
     else:
-        max = list_of_integers[0]
-        for i in list_of_integers:
-            if max < i:
-                max = i
-        return max
+        return max(list_of_integers)
