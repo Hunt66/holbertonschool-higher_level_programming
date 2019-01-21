@@ -6,5 +6,5 @@ with urllib.request.urlopen('https://intranet.hbtn.io/status') as r:
     html = r.read()
     print("Body response:")
     print("    - type: " + str(type(html)))
-    print("    - ontesnt: " + str(html))
+    print("    - contesnt: " + str(html))
     print("    - utf8 content: " + str(html.decode('utf-8')))
