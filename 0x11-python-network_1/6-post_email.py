@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" Sends a POST request to the URL passed in with email as parameter"""
-""" dislplays body respones"""
+""" Sends a POST request to the URL passed in with email as parameter
+    dislplays body respones"""
 import sys
 import requests
 
