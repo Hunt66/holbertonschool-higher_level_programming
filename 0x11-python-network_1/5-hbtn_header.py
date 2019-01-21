@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""   """
+""" takes a URL and displays the x-request-id  """
 import requests
 import sys
 
