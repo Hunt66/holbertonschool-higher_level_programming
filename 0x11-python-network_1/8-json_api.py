@@ -12,7 +12,7 @@ if __name__ == "__main__":
         r = requests.post('http://0.0.0.0:5000/search_user', data={'q': lett})
         try:
             ans = r.json()
-            if ans != None:
+            if ans is None:
                 print('[' + str(ans['id']) + '] ' + str(ans['name']))
             else:
                 print("No result")
