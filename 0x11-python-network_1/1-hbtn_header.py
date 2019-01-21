@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """ takes a URL sends request and displays the value of X-Request-Id found in
      the header """
 
@@ -11,4 +10,7 @@ if __name__ == "__main__":
         print("URL required")
     else:
         with urllib.request.urlopen(sys.argv[1]) as r:
-            print(r.info()['X-Reqest-Id'])
+            stf = r.getheaders()
+            for ans in stf:
+                if 'X-Request-Id' in ans:
+                    print(ans[1])
