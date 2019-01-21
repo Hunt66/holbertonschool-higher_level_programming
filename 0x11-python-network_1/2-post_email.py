@@ -10,6 +10,6 @@ if len(sys.argv) < 2:
 elif len(sys.argv) < 3:
     print("requires email")
 else:
-    stf = urllib.parse.urlencode({'email' : sys.argv[2]}).encode('utf-8')
+    stf = urllib.parse.urlencode({'email': sys.argv[2]}).encode('utf-8')
     with urllib.request.urlopen(sys.argv[1], stf) as r:
         print(r.read().decode('utf-8'))
