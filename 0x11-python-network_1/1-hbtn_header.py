@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ takes a URL sends request and displays the value of X-Request-Id found in
      the header """
 
