@@ -1,5 +1,8 @@
-## Python More Classes
-# Holberton Coding School
-Erwin Gove
+# Python More Classes
+## Holberton Coding School
+## Erwin Gove
 
-In this lession I will be doing more things with classes
+This repo is made for education
+
+In this lession I will be doing more things with classes. mostly building on
+a basic rectangle class.

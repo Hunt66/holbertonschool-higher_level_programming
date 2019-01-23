@@ -1,7 +1,8 @@
-## Python More Data Structures
-# Holberton Coding School
-# 9/20/2018
-# by Erwin Gove
+# Python More Data Structures
+## Holberton Coding School
+## 9/20/2018
+## by Erwin Gove
+
 This directory is made for education
 
 In this lession I will be learning about some diffrent types of data structures
