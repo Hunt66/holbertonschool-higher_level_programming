@@ -1,14 +1,12 @@
 #!/usr/bin/node
 // computes and prints a factorial
-let input = parseInt(process.argv[2]);
-let i = 0;
-if (isNaN(input) || input <= 1) {
-  console.log('1');
-} else {
-  let out = input;
-  for (i = 0; input > 1; i++) {
-    input = input - 1;
-    out *= input;
+
+function fact (x) {
+  if (isNaN(x) || x <= 1) {
+    return 1;
+  } else {
+    return x * fact(x - 1);
   }
-  console.log(out);
 }
+let input = parseInt(process.argv[2]);
+console.log(fact(input));
