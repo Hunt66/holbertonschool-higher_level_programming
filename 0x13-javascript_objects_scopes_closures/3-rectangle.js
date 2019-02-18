@@ -2,14 +2,14 @@
 // Simply an empty class Rectangle with nothing?
 
 class Rectangle {
-  constructor(w, h) {
-    if (h <= 0 || h <= 0 || w ===undefined || h === undefined) {
-	return this;
+  constructor (w, h) {
+    if (h <= 0 || h <= 0 || w === undefined || h === undefined) {
+      return this;
     }
     this.height = h;
     this.width = w;
   }
-  print() {
+  print () {
     let p = '';
     let i = 0;
     let j = 0;
