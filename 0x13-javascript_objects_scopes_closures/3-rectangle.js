@@ -6,8 +6,8 @@ class Rectangle {
     if (h <= 0 || h <= 0 || w === undefined || h === undefined) {
       return this;
     }
-    this.height = h;
     this.width = w;
+    this.height = h;
   }
   print () {
     let p = '';
