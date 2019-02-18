@@ -1,7 +1,0 @@
-#!/usr/bin/node
-// coverter func
-
-exports.converter = function (base) {
-  base = fromtoCharCode(base);
-  return base;
-};
