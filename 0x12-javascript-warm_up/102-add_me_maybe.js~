@@ -1,0 +1,3 @@
+#!/usr/bin/node
+// func that increments and calls a func
+export
