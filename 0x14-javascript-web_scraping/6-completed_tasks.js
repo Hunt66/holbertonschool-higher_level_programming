@@ -8,9 +8,11 @@ r(process.argv[2], function (error, result, body) {
     let i = 0;
     for (i = 0; i < lst.length; i++) {
       if (lst[i]['completed'] === true) {
-        out[lst[i]['userId']] += 1;
-      } else {
-        out[lst[i]['userId']] = 1;
+        if (out[lst[i]['userId']] !== undefined) {
+          out[lst[i]['userId']] += 1;
+        } else {
+          out[lst[i]['userId']] = 1;
+        }
       }
     }
     console.log(out);
