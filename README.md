@@ -1,4 +1,6 @@
 # holbertonschool-higher_level_programming
+## Holberton Coding School
+### Erwin Gove
 
 This repo contains all of the small Holberton Coding School projects
 related to higher level coding. Most of it is in Python but a few
